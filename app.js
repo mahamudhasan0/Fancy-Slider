@@ -45,16 +45,15 @@ let slideIndex = 0;
 const selectItem = (event, img) => {
   let element = event.target;
   element.classList.toggle('added');
- 
   let item = sliders.indexOf(img);
   if (item === -1) {
     sliders.push(img);
     return item;
   } else {
-   sliders.remove(img);
+   sliders.splice(item,1);
   }
 }
-var timer
+var timer;
 const createSlider = () => {
   // check slider image length
   if (sliders.length < 2) {
